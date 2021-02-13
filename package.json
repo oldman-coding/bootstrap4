@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "start": "npm run lite",
-    "test": "echo \"Error: no test specified\" && exit 1", 
+    "test": "echo \"Error: no test specified\" && exit 1",
     "lite": "lite-server"
   },
   "repository": {
@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/oldman-coding/bootstrap4#readme",
   "dependencies": {
+    "bootstrap": "^4.6.0",
+    "jquery": "^3.5.1",
     "lite-server": "^2.6.1"
   }
 }
