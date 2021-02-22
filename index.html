@@ -37,22 +37,46 @@
     </nav>
     <!-- Login Modal -->
     <div id='loginModal' class='modal fade' role='dialog'>
-        
-            <div class='modal-dialog modal-lg' role='content'>
-                <div class='modal-content'>
-                    <div class='modal-header'>
-                        <h4 class='modal-title'>Login</h4>
-                        <button type='button' class='close' data-dismiss='modal'>
-                            &times;
-                        </button>
-                    </div>
-                    <div class='modal-body'>
-        
-                    </div>
+        <div class='modal-dialog modal-lg' role='content'>
+            <div class='modal-content'>
+                <div class='modal-header'>
+                    <h4 class='modal-title'>Login</h4>
+                    <button type='button' class='close' data-dismiss='modal'>
+                        &times;
+                    </button>
+                </div>
+                <div class='modal-body'>
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-sm-4">
+                                    <label class="sr-only" for="exampleInputEmail3">Email address</label>
+                                    <input type="email" class="form-control form-control-sm mr-1" id="exampleInputEmail3" placeholder="Enter email">
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <label class="sr-only" for="exampleInputPassword3">Password</label>
+                                <input type="password" class="form-control form-control-sm mr-1" id="exampleInputPassword3" placeholder="Password">
+                            </div>
+                            <div class="col-sm-auto">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox">
+                                    <label class="form-check-label"> Remember me
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+                            <button type="submit" class="btn btn-primary btn-sm ml-1">Sign in</button>        
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+    <!-- End Login Modal -->
+
+   
+    
     <!-- Header Jumbotron -->
     <header class='jumbotron'>
         <div class='container'>
@@ -65,13 +89,81 @@
                     <img src='/img/logo.png' class='img-fluid'>
                 </div>
                 <div class='col-12 col-sm align-self-center'>
-                    <a href="#ReserveTable" class="btn nav-link btn-warning btn-lg" 
-                    data-toggle="tooltip" data-html='true' title='or Call us at <br><strong>+852 1234455</strong>'
-                    data-placement='bottom' role="button">Reserve Table</a>
+                    <a class="btn btn-warning btn-lg nav-link" 
+                    data-toggle="modal" data-target='#reserveModal'>Reserve Table</a>
                 </div>
             </div>
         </div>
     </header>
+     <!-- Reserve Table Modal -->
+     <div id='reserveModal' class='modal fade' role='dialog'>
+        <div class='modal-dialog modal-lg' role='content'>
+            <div class='modal-content'>
+                <div class='modal-header'>
+                    <h4 class='modal-title'>Reserve Table Form</h4>
+                    <button type='button' class='close' data-dismiss='modal'>
+                        &times;
+                    </button>
+                </div>
+                <div class='modal-body'>
+                    <form>
+                        <div class='row'>
+                            <label class='col-md-3 col-form-label'>Number of guest</label>
+                            <div class='col-md-9'>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                    <label class="form-check-label" for="inlineRadio1">1</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                        <label class="form-check-label" for="inlineRadio2">2</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                                        <label class="form-check-label" for="inlineRadio3">3</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4">
+                                    <label class="form-check-label" for="inlineRadio1">4</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="option5">
+                                        <label class="form-check-label" for="inlineRadio2">5</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option6">
+                                        <label class="form-check-label" for="inlineRadio6">6</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='row'>
+                            <label class='col-md-3 col-form-label'>Section</label>
+                            <div class="btn-group col-md-4" role="group" aria-label="Basic example">
+                                <button type="button" class="btn btn-primary active">Non-Smoking</button>
+                                <button type="button" class="btn btn-danger">Smoking</button>
+                              </div>
+                        </div>
+                        <div class='row mt-2'>
+                            <label class='col-md-3 col-form-label'>Date and Time</label>
+                            <div class='input-group col-md-6'>
+                                <input class='form-control' type="text" name="date" id="time" placeholder="Date">
+                                <input class='form-control ml-3' type="text" name="time" id="time" placeholder="Time">
+                            </div>   
+                        </div>
+                        <div class='row mt-2' >
+                            <div class='col-md-10 offset-md-3'>
+                                <button class='btn btn-secondary' data-dismiss="modal">Cancel</button>
+                                <button class='btn btn-primary btn-md' type="submit">
+                                    Reserved
+                                </button>
+                            </div>
+                        </div>               
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Modal Reseved Table -->
 
     <div class='container'>
         <!-- Carousel -->
@@ -120,6 +212,7 @@
                 </div>
             </div>
         </div>
+        <!-- End Carousel -->
 
         <div class='row row-content align-items-center' >
             <div class='col-12 col-sm-4 order-sm-last col-md-3'>
@@ -170,7 +263,8 @@
                 
             </div>
         </div>
-        <div class='row row-content' id="ReserveTable">
+        <!-- Reseved Table Form -->
+        <!-- <div class='row row-content' id="ReserveTable">
             <div class='col-12 col-md-6 offset-md-3 justify-self-center mb-3 mt-3'>
                 <div class='card'>
                    <h3 class='card-header text-white bg-warning'>Reserved a table</h3>
@@ -220,12 +314,11 @@
                                 </div>
                             </div>               
                        </form>
-                       
-                        
                     </div> 
                 </div>
-       </div>
+       </div> -->
     </div>
+
 
     <footer class='footer'>
         <div class='container'>
@@ -273,11 +366,7 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('[data-toggle="tooltip"]').tooltip();
-        });
-    </script>
+    
 </body>
 
 </html>
