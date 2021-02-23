@@ -28,7 +28,7 @@
                     <li class='nav-item'><a class='nav-link' href='./contactus.html'><span class='fa fa-address-card fa-lg'></span>Contact</a></li>
                 </ul>
                 <span class='navbar-text'>
-                    <a data-toggle='modal' data-target='#loginModal'>
+                    <a id='login'>
                         <span class='fa fa-sign-in'></span> Login</a>
                 </span>
             </div>
@@ -90,7 +90,7 @@
                 </div>
                 <div class='col-12 col-sm align-self-center'>
                     <a class="btn btn-warning btn-lg nav-link" 
-                    data-toggle="modal" data-target='#reserveModal'>Reserve Table</a>
+                    id='reserved'>Reserve Table</a>
                 </div>
             </div>
         </div>
@@ -369,23 +369,7 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#myCarousel').carousel({ interval: 500 });
-            $('#carouselButton').click(function() {
-                console.log('Click Pause button');
-                if($('#carouselButton').children('span').hasClass('fa-pause')){
-                    $('#myCarousel').carousel('pause');
-                    $('#carouselButton').children('span').removeClass('fa-pause');
-                    $('#carouselButton').children('span').addClass('fa-play');
-                } else {
-                    $('#myCarousel').carousel('cycle');
-                    $('#carouselButton').children('span').removeClass('fa-play');
-                    $('#carouselButton').children('span').addClass('fa-pause');
-                }
-            });
-        });
-    </script>
+    <script src='/js/scripts.js'></script>
 </body>
 
 </html>
