@@ -131,7 +131,7 @@
                                         <label class="form-check-label" for="inlineRadio2">5</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option6">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio6" value="option6">
                                         <label class="form-check-label" for="inlineRadio6">6</label>
                                 </div>
                             </div>
@@ -209,14 +209,9 @@
                     <a class='carousel-control-next' href='#myCarousel' role='button' data-slide='next'>
                         <span class='carousel-control-next-icon'></span>
                     </a>
-                    <div class='button-group' id='carouselButton'>
-                        <button class='btn btn-danger' id='pauseCarousel'>
-                            <span class='fa fa-pause'></span>
-                        </button>
-                        <button class='btn btn-danger' id='playCarousel'>
-                            <span class='fa fa-play'></span>
-                        </button>
-                    </div>
+                    <button class='btn btn-danger' id='carouselButton'>
+                        <span class='fa fa-pause'></span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -376,12 +371,18 @@
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script>
         $(document).ready(function() {
-            $('#myCarousel').carousel({ interval: 500 }); 
-            $('#pauseCarousel').click(function () {
-                $('#myCarousel').carousel('pause');
-            });
-            $('#playCarousel').click(function () {
-                $('#myCarousel').carousel('cycle');
+            $('#myCarousel').carousel({ interval: 2000});
+            $('#carouselButton').click(function() {
+                console.log('Click Pause button');
+                if($('#carouselButton').children('span').hasClass('fa-pause')){
+                    $('#myCarousel').carousel('pause');
+                    $('#carouselButton').children('span').removeClass('fa-pause');
+                    $('#carouselButton').children('span').addClass('fa-play');
+                } else {
+                    $('#myCarousel').carousel('cycle');
+                    $('#carouselButton').children('span').removeClass('fa-play');
+                    $('#carouselButton').children('span').addClass('fa-pause');
+                }
             });
         });
     </script>
